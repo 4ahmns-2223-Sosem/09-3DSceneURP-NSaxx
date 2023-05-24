@@ -12,12 +12,14 @@ public class MissionUpdate : MonoBehaviour
 
 
     public int index;
+    // Start is called before the first frame update
     void Start()
     {
         textComponent.text = string.Empty;
         StartMissionText();
     }
 
+    // Update is called once per frame
     void Update()
     {
 
