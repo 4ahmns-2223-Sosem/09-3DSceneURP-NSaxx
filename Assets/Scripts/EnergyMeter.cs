@@ -5,13 +5,12 @@ using UnityEngine;
 public class EnergyMeter : MonoBehaviour
 {
     public bool Energyturnedon;
-    public float EnergyLevel;
-    public float MWH;
+    public int EnergyLevel;
+    public int MWH;
 
     void Start()
     {
         Energyturnedon = false;
-        //StartCoroutine(Waiter());
     }
 
 
@@ -23,23 +22,16 @@ public class EnergyMeter : MonoBehaviour
     }
 
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        if (other.gameObject.tag == "Player")
+        if(Energyturnedon == true)
         {
+            StartCoroutine(Waiter());
+        }
 
-            if (Input.GetKey(KeyCode.E))
-            {
-                Energyturnedon = !Energyturnedon;
-                if (Energyturnedon)
-                {
-                    StartCoroutine(Waiter());
-                }
-                else
-                {
-                    StopAllCoroutines();
-                }
-            }
+        if (Energyturnedon == false)
+        {
+            StopAllCoroutines();
         }
     }
 }

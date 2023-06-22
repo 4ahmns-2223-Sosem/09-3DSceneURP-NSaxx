@@ -5,38 +5,32 @@ using TMPro;
 
 public class MissionUpdate : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent;
+    public TextMeshProUGUI textComp;
     [TextArea]
-    public string[] lines;
-    public float textSpeed;
+    public string[] line;
+    public float textSped;
 
 
     public int index;
-    // Start is called before the first frame update
     void Start()
     {
-        textComponent.text = string.Empty;
+        textComp.text = string.Empty;
         StartMissionText();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     public void StartMissionText()
     {
-        textComponent.text = "";
+        textComp.text = "";
         StopAllCoroutines();
         StartCoroutine(TypeLine());
     }
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in line[index].ToCharArray())
         {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            textComp.text += c;
+            yield return new WaitForSeconds(textSped);
         }
 
     }

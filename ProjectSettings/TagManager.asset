@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - Orange
+  - Plate
+  - Juicer
+  - RawBacon
+  - CookedBacon
+  - Baconburned
+  - Bread1
+  - Bread2
+  - DoneBread1
+  - DoneBread2
   layers:
   - Default
   - TransparentFX
